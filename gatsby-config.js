@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = {
   siteMetadata: {
     title: 'gatsby-starter-typescript-plus',
@@ -58,4 +56,4 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-catch-links`
   ]
-}
+};
