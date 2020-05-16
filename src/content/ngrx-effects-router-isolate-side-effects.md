@@ -65,6 +65,6 @@ export class HomeComponent {
 
 That a basic example showing just how to get a param. The real power comes when we need to use that param and fetch some data with it. Then we'll have an effect where we'll use the `mergeMap` operator to fetch the data using this id from the URL. On the component, we'll just subscribe to the fetched data, and that's it.
 
-{% stackblitz ngrx-effects-router-store view=preview %}
+https://stackblitz.com/edit/ngrx-effects-router-store
 
 If you liked it, please show me some love here or on my twitter @AdamGenshaft.
