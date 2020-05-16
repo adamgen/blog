@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 
 export const colors = {
-  brand: '#663399',
+  brand: '#4C4990',
+  brandShadow: '#0D1B2A',
   lilac: '#9d7cbf',
   accent: '#ffb238',
   success: '#37b635',

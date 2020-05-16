@@ -5,12 +5,14 @@ import { Link } from 'gatsby';
 
 import { heights, dimensions, colors } from '../styles/variables';
 import Container from './Container';
+import { brandShadow } from '../styles/mixins';
 
 const StyledHeader = styled.header`
   height: ${heights.header}px;
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.brand};
   color: ${transparentize(0.5, colors.white)};
+  box-shadow: ${brandShadow};
 `;
 
 const HeaderInner = styled(Container)`
