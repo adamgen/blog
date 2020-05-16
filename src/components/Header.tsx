@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { transparentize } from 'polished';
-import { Link } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 
-import { heights, dimensions, colors } from '../styles/variables';
+import { colors, dimensions, heights } from '../styles/variables';
 import Container from './Container';
 import { brandShadow } from '../styles/mixins';
 
@@ -11,6 +11,7 @@ const StyledHeader = styled.header`
   height: ${heights.header}px;
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.brand};
+  background: linear-gradient(90deg, ${colors.brand} 0%, #646297 100%);
   color: ${transparentize(0.5, colors.white)};
   box-shadow: ${brandShadow};
 `;
@@ -26,6 +27,7 @@ const HomepageLink = styled(Link)`
   color: ${colors.white};
   font-size: 1.5rem;
   font-weight: 600;
+  line-height: 0;
 
   &:hover,
   &:focus {
@@ -33,16 +35,34 @@ const HomepageLink = styled(Link)`
   }
 `;
 
+const Logo = styled.img`
+  height: 60px;
+  color: #fff;
+`;
+
 interface HeaderProps {
   title: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => (
-  <StyledHeader>
-    <HeaderInner>
-      <HomepageLink to="/">{title}</HomepageLink>
-    </HeaderInner>
-  </StyledHeader>
-);
+const Header: React.FC<HeaderProps> = () => {
+  const query = graphql`
+    query LogoQuery {
+      file(relativePath: { eq: "logo.svg" }) {
+        publicURL
+      }
+    }
+  `;
+  const logoUrl = useStaticQuery(query).file.publicURL;
+
+  return (
+    <StyledHeader>
+      <HeaderInner>
+        <HomepageLink to="/">
+          <Logo src={logoUrl} alt="" />
+        </HomepageLink>
+      </HeaderInner>
+    </StyledHeader>
+  );
+};
 
 export default Header;

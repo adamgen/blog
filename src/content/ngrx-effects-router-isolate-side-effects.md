@@ -1,5 +1,5 @@
 ---
-title: 'NGRX'
+title: 'NGRX | Use effects and router-store to isolate route related side 🧙‍♂️ effects'
 ---
 One of the major advantages of `ngrx` is that we can isolate side effects from the components.
 
