@@ -4,10 +4,13 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import 'modern-normalize';
 import '../styles/normalize';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
 import Header from '../components/Header';
 import LayoutRoot from '../components/LayoutRoot';
 import LayoutMain from '../components/LayoutMain';
+
+deckDeckGoHighlightElement();
 
 interface StaticQueryProps {
   site: {
