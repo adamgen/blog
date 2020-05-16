@@ -28,6 +28,7 @@ const HomepageLink = styled(Link)`
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 0;
+  //margin-right: 60px;
 
   &:hover,
   &:focus {
@@ -38,6 +39,15 @@ const HomepageLink = styled(Link)`
 const Logo = styled.img`
   height: 60px;
   color: #fff;
+`;
+
+const Menu = styled.div``;
+
+const MenuItem = styled(Link)`
+  color: #fff;
+  margin-left: 30px;
+  font-family: 'Quattrocento', serif;
+  font-size: 20px;
 `;
 
 interface HeaderProps {
@@ -60,6 +70,12 @@ const Header: React.FC<HeaderProps> = () => {
         <HomepageLink to="/">
           <Logo src={logoUrl} alt="" />
         </HomepageLink>
+
+        <Menu>
+          <MenuItem to="/about">About</MenuItem>
+          <MenuItem to="/about">React</MenuItem>
+          <MenuItem to="/about">Angular</MenuItem>
+        </Menu>
       </HeaderInner>
     </StyledHeader>
   );
