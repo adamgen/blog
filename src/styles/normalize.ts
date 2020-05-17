@@ -5,6 +5,7 @@ import { getEmSize } from './mixins';
 export default css`
   html {
     box-sizing: border-box;
+    word-break: break-word;
   }
 
   *,
