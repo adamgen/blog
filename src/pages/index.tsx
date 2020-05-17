@@ -12,11 +12,9 @@ const query = graphql`
         node {
           fields {
             slug
-            layout
           }
           frontmatter {
             title
-            layout
           }
         }
       }
@@ -24,10 +22,23 @@ const query = graphql`
   }
 `;
 
+interface IndexPageQueryProps {
+  allMarkdownRemark: {
+    edges: {
+      node: {
+        fields: {
+          slug: string;
+        };
+        frontmatter: {
+          title: string;
+        };
+      };
+    }[];
+  };
+}
+
 const IndexPage = () => {
-  const data = useStaticQuery<{ allMarkdownRemark: { edges: { node: { fields: { slug: string }; frontmatter: { title: string } } }[] } }>(
-    query
-  );
+  const data = useStaticQuery<IndexPageQueryProps>(query);
 
   const posts = data.allMarkdownRemark.edges;
   return (
