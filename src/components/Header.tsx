@@ -6,9 +6,9 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import { colors, dimensions, heights } from '../styles/variables';
 import Container from './Container';
 import { brandShadow } from '../styles/mixins';
+import { aboveMobile, belowMobile } from '../styles/breakpoints';
 
 const StyledHeader = styled.header`
-  height: ${heights.header}px;
   padding: 0 ${dimensions.containerPadding}rem;
   background-color: ${colors.brand};
   background: linear-gradient(90deg, ${colors.brand} 0%, #646297 100%);
@@ -21,6 +21,10 @@ const HeaderInner = styled(Container)`
   flex-direction: row;
   align-items: center;
   height: 100%;
+  flex-wrap: wrap;
+  ${belowMobile} {
+    justify-content: center;
+  }
 `;
 
 const HomepageLink = styled(Link)`
@@ -28,7 +32,6 @@ const HomepageLink = styled(Link)`
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 0;
-  //margin-right: 60px;
 
   &:hover,
   &:focus {
@@ -37,17 +40,32 @@ const HomepageLink = styled(Link)`
 `;
 
 const Logo = styled.img`
-  height: 60px;
+  height: ${heights.header}px;
   color: #fff;
 `;
 
-const Menu = styled.div``;
-
 const MenuItem = styled(Link)`
   color: #fff;
-  margin-left: 30px;
   font-family: 'Quattrocento', serif;
   font-size: 20px;
+  padding: 0px 10px;
+`;
+
+const Menu = styled.div`
+  margin-top: 5px;
+  ${aboveMobile} {
+    ${MenuItem} {
+      margin-left: 30px;
+    }
+  }
+  ${belowMobile} {
+    display: flex;
+    align-content: space-between;
+    flex-grow: 1;
+    ${MenuItem} {
+      margin: auto;
+    }
+  }
 `;
 
 interface HeaderProps {
