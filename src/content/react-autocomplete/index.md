@@ -1,10 +1,7 @@
 ---
 title: 'Making autocomplete with react 🤯 common mistakes and their solutions'
-data: '1'
+date: '1'
 ---
-
-![Chinese Salty Egg](./salty_egg.jpg)
-
 
 Let's make an autocomplete with react and a promise-based HTTP client. Just a bit less trivial then it seems.
 
