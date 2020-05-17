@@ -6,8 +6,8 @@ import Container from '../components/Container';
 import IndexLayout from '../layouts';
 
 const query = graphql`
-  query AngularPageQuery {
-    allMarkdownRemark(filter: { frontmatter: { tags: { regex: "/angular/" } } }) {
+  query ReactPageQuery {
+    allMarkdownRemark(filter: { frontmatter: { tags: { regex: "/react/" } } }) {
       edges {
         node {
           fields {
@@ -22,7 +22,7 @@ const query = graphql`
   }
 `;
 
-interface AngularPageQueryProps {
+interface ReactPageQueryProps {
   allMarkdownRemark: {
     edges: {
       node: {
@@ -37,8 +37,8 @@ interface AngularPageQueryProps {
   };
 }
 
-const AngularPage = () => {
-  const data = useStaticQuery<AngularPageQueryProps>(query);
+const ReactPage = () => {
+  const data = useStaticQuery<ReactPageQueryProps>(query);
 
   const posts = data.allMarkdownRemark.edges;
   return (
@@ -61,4 +61,4 @@ const AngularPage = () => {
   );
 };
 
-export default AngularPage;
+export default ReactPage;

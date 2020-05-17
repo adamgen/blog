@@ -91,8 +91,8 @@ const Header: React.FC<HeaderProps> = () => {
 
         <Menu>
           <MenuItem to="/about">About</MenuItem>
-          <MenuItem to="/about">React</MenuItem>
-          <MenuItem to="/about">Angular</MenuItem>
+          <MenuItem to="/react">React</MenuItem>
+          <MenuItem to="/angular">Angular</MenuItem>
         </Menu>
       </HeaderInner>
     </StyledHeader>

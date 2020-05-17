@@ -1,6 +1,7 @@
 ---
 title: 'Making autocomplete with react 🤯 common mistakes and their solutions'
 date: '1'
+tags: react, tutorial
 ---
 
 Let's make an autocomplete with react and a promise-based HTTP client. Just a bit less trivial then it seems.
