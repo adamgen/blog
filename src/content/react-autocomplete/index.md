@@ -1,6 +1,11 @@
 ---
 title: 'Making autocomplete with react 🤯 common mistakes and their solutions'
+data: '1'
 ---
+
+![Chinese Salty Egg](./salty_egg.jpg)
+
+
 Let's make an autocomplete with react and a promise-based HTTP client. Just a bit less trivial then it seems.
 
 The examples below will show you the common mistakes, and how to write an autocomplete react component using a battle-tested pattern.
